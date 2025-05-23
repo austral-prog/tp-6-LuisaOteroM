@@ -20,7 +20,6 @@ def add_elements(lista):
 
     return nueva_lista2
 
-
 def is_empty(lista):
 
     if len(lista) == 0:

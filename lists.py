@@ -1,50 +1,23 @@
-def remove_elements(lista):#copio la lista para no modificar la original
+def remove_elements(list_to_remove_elements):
+    indices_to_remove = [0, 4, 5]
+    return [item for index, item in enumerate(list_to_remove_elements) if index not in indices_to_remove]
 
-    if len(copia_lista_uno) > 5: 
-        del copia_lista_uno[5]  
-    if len(copia_lista_uno) > 4: 
-        del copia_lista_uno[4] 
-        del copia_lista_uno[0]  
+def add_elements(list_to_add_elements):
+    list_to_add_elements.insert(0, 'Pink')
+    list_to_add_elements.append('Yellow')
+    return list_to_add_elements
 
-    return copia_lista_uno
+def is_empty(list_to_check):
+    return len(list_to_check) == 0
 
-def add_elements(lista):
-    copia_lista_dos = lista[:]  
-    copia_lista_dos.insert(0, 'Pink') 
-    copia_lista_dos.append('Yellow') 
-    
-    return copia_lista_dos 
-
-
-def is_empty(lista):
-    return len(lista) == 0 
-
-
-def check_lists(lista1, lista2):
-    if len(lista1) >= 3 and len(lista2) >= 3: 
-        return lista1[2] == lista2[2] 
-    else: return False
-
-
-def list_of_lists(listas):
-    nueva = [] 
-
-    if len(listas) >= 1:
-        sublista1 = listas[0][:2]  
+def check_lists(list_to_compare1, list_to_compare2):
+    if len(list_to_compare1) > 2 and len(list_to_compare2) > 2:
+        return list_to_compare1[2] == list_to_compare2[2]
     else:
-        sublista1 = []
-    nueva.append(sublista1)
+        return False
 
-    if len(listas) >= 2:
-        sublista2 = listas[1][1:4]  
-    else:
-        sublista2 = []
-    nueva.append(sublista2)
-
-    if len(listas) >= 3:
-        sublista3 = listas[2][-2:]  
-    else:
-        sublista3 = []
-    nueva.append(sublista3)
-
-    return nueva
+def list_of_lists(list_of_lists_to_modify):
+    first = list_of_lists_to_modify[0][:2]
+    second = list_of_lists_to_modify[1][1:4]
+    third = list_of_lists_to_modify[2][-2:]
+    return [first, second, third]
